@@ -10,10 +10,25 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+.mat-card-image{
+  width:auto;
+  margin: auto;
+  display:block;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 525px) {
   .home-content {
     .home-card {
       width: calc(50% - 52px);
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home-content {
+    .home-card {
+      width: calc(33.333% - 52px);
     }
   }
 }
