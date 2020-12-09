@@ -4,5 +4,6 @@
 </div>
 <div mat-dialog-actions>
   <button [color]="alerta.corBtnSucesso" mat-raised-button cdkFocusInitial [mat-dialog-close]="true">{{alerta.btnSucesso}}</button>
-  <button [color]="alerta.corBtnCancelar" mat-raised-button [mat-dialog-close]="false" *ngIf="alerta.possuirBtnFechar">{{alerta.btnCancel}}</button>
+  <button [color]="alerta.corBtnCancelar" mat-raised-button cdkFocusInitial [mat-dialog-close]="false" *ngIf="alerta.possuirBtnFechar">{{alerta.btnCancelar}}</button>
+  
 </div>

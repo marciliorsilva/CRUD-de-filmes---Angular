@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 import { FilmesService } from 'src/app/core/filmes.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
@@ -17,7 +18,7 @@ export class CadastroFilmesComponent implements OnInit {
   cadastro: FormGroup;
   generos: Array<string>;
 
-  constructor(public validacao: ValidarCamposService, private fb: FormBuilder, private filmeService: FilmesService,public dialog: MatDialog) { }
+  constructor(public validacao: ValidarCamposService, private fb: FormBuilder, private filmeService: FilmesService,public dialog: MatDialog, private router: Router) { }
 
   get f(){
     return this.cadastro.controls;
@@ -60,15 +61,31 @@ export class CadastroFilmesComponent implements OnInit {
       const config = {
         data: {
           btnSucesso:'Ir para a listagem',
-          btnCancel:"Cadastrar um novo filme",
-          corBtnCancelar:"primary",
-          possuirBtnFechar: true
+          btnCancelar:'Cadastrar um novo filme',
+          corBtnCancelar:'primary',
+          possuirBtnFechar: false
         } as Alerta
       }
-      const dialogRef = this.dialog.open(AlertaComponent,config);
+      const dialogRef = this.dialog.open(AlertaComponent, config);
+      dialogRef.afterClosed().subscribe((opcao:boolean) =>{ 
+        if(opcao){
+          this.router.navigateByUrl('filmes');
+
+        }else{
+          this.reiniciarForm();
+        }
+      })
     },
     () =>{
-      alert('error ao salvar')
+      const config = {
+        data: {
+          titulo:'Erro ao salvar o registro!',
+          descricao:'Não conseguimos salvar seu registro',
+          corBtnSucesso: 'warn',
+          btnSucesso:'Fechar',
+        } as Alerta
+      }
+      this.dialog.open(AlertaComponent, config);
     });
   }
 

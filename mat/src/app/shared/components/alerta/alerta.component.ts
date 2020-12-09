@@ -13,10 +13,10 @@ export class AlertaComponent implements OnInit {
     titulo:'Sucesso',
     descricao:'Seu registro foi cadastrado com sucesso!',
     btnSucesso:'Ok',
-    btnCancelar:"Cancelar",
-    corBtnSucesso:"accent",
-    corBtnCancelar:"warn",
-    possuirBtnFechar: false
+    btnCancelar:'Cancelar',
+    corBtnSucesso:'accent',
+    corBtnCancelar:'warn',
+    possuirBtnFechar: true
   } as Alerta;
  
 
