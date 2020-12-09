@@ -29,6 +29,36 @@
       "urlIMDb": "https://www.imdb.com/title/tt8134470/?ref_=hm_tpks_tt_1_pd_tp1_t1",
       "genero": "Drama",
       "id": 2
+    },
+    {
+      "titulo": "tests",
+      "urlFoto": "testeadasdsad",
+      "dtLancamento": "2020-12-17T03:00:00.000Z",
+      "descricao": "teste",
+      "nota": 4,
+      "urlIMDb": "",
+      "genero": "Terror",
+      "id": 3
+    },
+    {
+      "titulo": "teste",
+      "urlFoto": "",
+      "dtLancamento": "2020-12-10T03:00:00.000Z",
+      "descricao": "teste",
+      "nota": 4,
+      "urlIMDb": "",
+      "genero": "Terror",
+      "id": 4
+    },
+    {
+      "titulo": "teste2",
+      "urlFoto": "",
+      "dtLancamento": "2020-12-19T03:00:00.000Z",
+      "descricao": "",
+      "nota": 5,
+      "urlIMDb": "",
+      "genero": "Romance",
+      "id": 5
     }
   ]
 }
