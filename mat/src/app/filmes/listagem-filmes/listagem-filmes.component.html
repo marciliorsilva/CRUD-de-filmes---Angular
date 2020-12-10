@@ -24,14 +24,12 @@
       <mat-card-title>{{filme.titulo}}</mat-card-title>
       <mat-card-subtitle>{{filme.genero}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="filme.urlFoto" [alt]="filme.titulo">
+    <img mat-card-image [src]="filme.urlFoto || semFoto" [alt]="filme.titulo">
     <mat-card-content>
-      <p>
-       {{filme.descricao}}
-      </p>
+      <p [innerHTML]="filme.descricao || 'Nenhuma descrição no momento.'"></p>
     </mat-card-content>
     <mat-card-actions>
-      <button color="accent" mat-raised-button>OPEN</button>
+      <button color="accent" mat-raised-button (click)="abrir(filme.id)">ABRIR</button>
     </mat-card-actions>
   </mat-card>
 
